@@ -63,6 +63,7 @@
     background: linear-gradient(45deg, rgba(46, 142, 35, 0.45), rgba(119, 106, 255, 0.45)), url("~assets/img/hero.jpg");
     background-size: cover;
     background-position: 50%;
+    background-attachment: fixed;
     box-shadow: 0px 0px 8px 0px #222 inset;
     text-align: center;
     display: flex;

@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">
+    <b-navbar-brand to="/">
       <img class="main_logo" src="~assets/img/logo.png" alt="gikencraft"/>
     </b-navbar-brand>
 
@@ -8,11 +8,11 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Home</b-nav-item>
-        <b-nav-item href="#">GikenCraftとは</b-nav-item>
-        <b-nav-item href="#">ルール</b-nav-item>
-        <b-nav-item href="#">導入Mod</b-nav-item>
-        <b-nav-item href="http://gikencraft.sota.zone:8123">Dynmap</b-nav-item>
+        <b-nav-item to="/">Home</b-nav-item>
+        <b-nav-item to="about">GikenCraftとは</b-nav-item>
+        <b-nav-item to="/rules">ルール</b-nav-item>
+        <b-nav-item to="/plugins">導入プラグイン</b-nav-item>
+        <b-nav-item href="http://gikencraft.net:8123">Dynmap</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
