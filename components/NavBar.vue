@@ -11,8 +11,13 @@
         <b-nav-item to="/">Home</b-nav-item>
         <b-nav-item to="about">GikenCraftとは</b-nav-item>
         <b-nav-item to="/rules">ルール</b-nav-item>
-        <b-nav-item to="/plugins">導入プラグイン</b-nav-item>
-        <b-nav-item href="http://gikencraft.net:8123">Dynmap</b-nav-item>
+        <b-nav-item-dropdown text="サーバ情報">
+          <b-dropdown-item to="/detail">サーバ情報</b-dropdown-item>
+          <b-dropdown-item to="/plugins">導入プラグイン</b-dropdown-item>
+          <b-dropdown-item to="/permissions">パーミッション情報</b-dropdown-item>
+          <b-dropdown-item to="/commands">コマンド一覧</b-dropdown-item>
+          <b-dropdown-item href="http://gikencraft.net:8123" target="_blank">Dynmap</b-dropdown-item>
+        </b-nav-item-dropdown>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->

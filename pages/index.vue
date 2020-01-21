@@ -3,7 +3,7 @@
     <NavBar/>
     <div class="hero">
       <img src="~assets/img/logo.png" alt="gikencraft"/>
-      <b-button variant="outline-light">Learn more</b-button>
+      <b-button variant="outline-light" to="/about">Learn more</b-button>
     </div>
     <Container>
       <b-container>

@@ -2,7 +2,7 @@
   <div>
     <NavBar />
     <Container>
-      <Title>ルール</Title>
+      <Title>コマンド一覧</Title>
     </Container>
     <Footer />
   </div>

@@ -2,7 +2,7 @@
   <div>
     <NavBar />
     <Container>
-      <Title>ルール</Title>
+      <Title>サーバ情報</Title>
     </Container>
     <Footer />
   </div>

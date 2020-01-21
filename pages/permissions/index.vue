@@ -2,7 +2,7 @@
   <div>
     <NavBar />
     <Container>
-      <Title>ルール</Title>
+      <Title>パーミッション情報</Title>
     </Container>
     <Footer />
   </div>
