@@ -18,7 +18,7 @@
   }
 
   .title span{
-    background: linear-gradient(transparent 60%, #F06292 0%);
+    background: linear-gradient(transparent 70%, #00BCD4 0%);
     font-weight: 600;
   }
 
