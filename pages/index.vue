@@ -5,18 +5,20 @@
       <img src="~assets/img/logo.png" alt="gikencraft"/>
       <b-button variant="outline-light">Learn more</b-button>
     </div>
-    <b-container class="contents">
-      <b-row>
-        <b-col sm="8">
-          <p class="h3">What's new</p>
-          <b-table bordered striped hover :items="whatsnew"></b-table>
-        </b-col>
-        <b-col sm="4">
-          <p class="h3">Members</p>
-          <b-table bordered striped hover :items="members"></b-table>
-        </b-col>
-      </b-row>
-    </b-container>
+    <Container>
+      <b-container>
+        <b-row>
+          <b-col sm="8">
+            <p class="h3">What's new</p>
+            <b-table bordered striped hover :items="whatsnew"></b-table>
+          </b-col>
+          <b-col sm="4">
+            <p class="h3">Members</p>
+            <b-table bordered striped hover :items="members"></b-table>
+          </b-col>
+        </b-row>
+      </b-container>
+    </Container>
     <Footer/>
   </div>
 </template>
@@ -24,9 +26,11 @@
 <script>
   import NavBar from "~/components/NavBar";
   import Footer from "~/components/Footer";
+  import Container from "~/components/Container";
 
   export default {
     components: {
+      Container,
       Footer,
       NavBar
     },
@@ -78,11 +82,5 @@
     height: auto;
     margin-bottom: 32px;
     opacity: 0.9;
-  }
-
-  .contents {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding-top: 32px;
   }
 </style>
