@@ -3,6 +3,7 @@
     <NavBar />
     <Container>
       <Title>パーミッション情報</Title>
+      <b-table bordered striped :items="items" />
     </Container>
     <Footer />
   </div>
@@ -22,6 +23,28 @@
       Footer,
       NavBar
     },
+    data() {
+      return {
+        items: [
+          {
+            permission: "minecraft.command.list",
+            description: "/list コマンドの許可",
+          },
+          {
+            permission: "minecraft.command.tell",
+            description: "/tell コマンドの許可",
+          },
+          {
+            permission: "dynmap.marker.sign",
+            description: "看板を使用したマーカ作成の許可",
+          },
+          {
+            permission: "spawn.spawn",
+            description: "/spawn コマンドの許可"
+          },
+        ]
+      }
+    }
   }
 </script>
 
