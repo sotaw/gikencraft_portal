@@ -16,7 +16,7 @@
           <b-dropdown-item to="/plugins">導入プラグイン</b-dropdown-item>
           <b-dropdown-item to="/permissions">パーミッション情報</b-dropdown-item>
           <b-dropdown-item to="/commands">コマンド一覧</b-dropdown-item>
-          <b-dropdown-item href="http://gikencraft.net:8123" target="_blank">Dynmap</b-dropdown-item>
+          <b-dropdown-item href="https://map.gikencraft.net" target="_blank">Dynmap</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
 

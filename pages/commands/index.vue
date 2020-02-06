@@ -3,7 +3,7 @@
     <NavBar />
     <Container>
       <Title>コマンド一覧</Title>
-      <b-table bordered striped :items="items" />
+      <b-table bordered striped :fields="fields" :items="items" :sort-by.sync="sortBy" />
     </Container>
     <Footer />
   </div>
@@ -25,23 +25,19 @@
     },
     data() {
       return {
-        items: [
-          {
-            command: "/list",
-            description: "接続ユーザ一覧を表示",
-            example: "/list"
-          },
-          {
-            command: "/tell",
-            description: "プライベートメッセージを送信",
-            example: "/tell hojiro hogehoge"
-          },
-          {
-            command: "/spawn",
-            description: "初期スポーン地点へワープ",
-            example: "/spawn"
-          },
-        ]
+
+      }
+    },
+    async asyncData({ $axios }){
+      const res = await $axios.$get('https://api.gikencraft.net/commands');
+      return {
+        items: res,
+        fields:[
+          "name",
+          "description",
+          "example",
+        ],
+        sortBy: "name",
       }
     }
   }

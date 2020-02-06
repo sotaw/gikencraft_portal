@@ -3,7 +3,7 @@
     <NavBar />
     <Container>
       <Title>パーミッション情報</Title>
-      <b-table bordered striped :items="items" />
+      <b-table bordered striped :fields="fields" :items="items" :sort-by.sync="sortBy" />
     </Container>
     <Footer />
   </div>
@@ -25,24 +25,18 @@
     },
     data() {
       return {
-        items: [
-          {
-            permission: "minecraft.command.list",
-            description: "/list コマンドの許可",
-          },
-          {
-            permission: "minecraft.command.tell",
-            description: "/tell コマンドの許可",
-          },
-          {
-            permission: "dynmap.marker.sign",
-            description: "看板を使用したマーカ作成の許可",
-          },
-          {
-            permission: "spawn.spawn",
-            description: "/spawn コマンドの許可"
-          },
-        ]
+
+      }
+    },
+    async asyncData({ $axios }){
+      const res = await $axios.$get('https://api.gikencraft.net/permissions');
+      return {
+        items: res,
+        fields:[
+          "name",
+          "description",
+        ],
+        sortBy: "name",
       }
     }
   }

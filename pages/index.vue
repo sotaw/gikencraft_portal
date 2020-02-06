@@ -9,12 +9,12 @@
       <b-container>
         <b-row>
           <b-col sm="8">
-            <p class="h3">What's new</p>
-            <b-table bordered striped hover :items="whatsnew"></b-table>
+            <p class="h3">新着情報</p>
+            <b-table bordered striped :fields="informations_fields" :items="informations" :sort-by.sync="informations_sortBy"/>
           </b-col>
           <b-col sm="4">
-            <p class="h3">Members</p>
-            <b-table bordered striped hover :items="members"></b-table>
+            <p class="h3">メンバー</p>
+            <b-table bordered striped :fields="members_fields" :items="members" :sort-by.sync="members_sortBy"/>
           </b-col>
         </b-row>
       </b-container>
@@ -36,23 +36,24 @@
     },
     data() {
       return {
-        members: [
-          {user: 'user1'},
-          {user: 'user2'},
-          {user: 'user3'},
-          {user: 'user4'},
-          {user: 'user5'},
-          {user: 'user6'},
-          {user: 'user7'},
-          {user: 'user8'},
-          {user: 'user9'}
+
+      }
+    },
+    async asyncData({ $axios }){
+      const mambers_res = await $axios.$get('https://api.gikencraft.net/members');
+      const informations_res = await $axios.$get('https://api.gikencraft.net/informations');
+      return {
+        members: mambers_res,
+        informations: informations_res,
+        members_fields:[
+          "name",
         ],
-        whatsnew: [
-          {date: '2020.1.11', title: 'Now developing'},
-          {date: '2020.1.11', title: 'Now developing'},
-          {date: '2020.1.11', title: 'Now developing'},
-          {date: '2020.1.11', title: 'Now developing'}
+        informations_fields:[
+          "date",
+          "content",
         ],
+        members_sortBy: "name",
+        informations_sortBy: "date",
       }
     }
   }
